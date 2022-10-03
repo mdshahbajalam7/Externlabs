@@ -35,6 +35,7 @@ function Dropdrag() {
 
   return (
     <>
+    <b>drag and drop</b>
       <div className={styles.maindiv}>
         {list &&
           list.map((item, index) => (

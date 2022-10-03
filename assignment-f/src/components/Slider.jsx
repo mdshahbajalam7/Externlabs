@@ -21,9 +21,12 @@ function Slider() {
     return 
   }, []);
   return (
+    <>
+    <b>Slider</b>
     <div className={styles.conatiner}>
       <img className={styles.image} src={slid[image]} alt="image" />
     </div>
+    </>
   );
 }
 
