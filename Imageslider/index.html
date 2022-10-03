@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drag and Drop</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <style>
-        body{
-    background:darkcyan;
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-}
+      body {
+        background: darkcyan;
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+      }
 
-.imgBox{
-    background-image: url('https://1.bp.blogspot.com/-qES8XCPCoMs/YPenPwxubUI/AAAAAAAAFdg/txOuXwSLWGQLT-QGAh98a-8m26UjMU9XQCLcBGAsYHQ/w1600/20210721_101605.jpg');
-    position: relative;
-    top: 7px;
-    left: 5px;
-    height: 145px;
-    width: 145px;
-    cursor: pointer;
-}
+      .imgBox {
+        background-image: url("https://1.bp.blogspot.com/-qES8XCPCoMs/YPenPwxubUI/AAAAAAAAFdg/txOuXwSLWGQLT-QGAh98a-8m26UjMU9XQCLcBGAsYHQ/w1600/20210721_101605.jpg");
+        position: relative;
+        top: 7px;
+        left: 5px;
+        height: 145px;
+        width: 145px;
+        cursor: pointer;
+      }
 
-.whiteBox{
-    display: inline-block;
-    height: 155px;
-    width: 155px;
-    margin: 10px;
-    background-color: white;
-    border: 3px black solid;
-}
+      .whiteBox {
+        display: inline-block;
+        height: 155px;
+        width: 155px;
+        margin: 10px;
+        background-color: white;
+        border: 3px black solid;
+      }
 
-.hold{
-    border: solid red 4px;
-}
+      .hold {
+        border: solid red 4px;
+      }
 
-.dashed{
-    background: rgb(214, 206, 206);
-    border-style: dashed;
-}
+      .dashed {
+        background: rgb(214, 206, 206);
+        border-style: dashed;
+      }
 
-.hide{
-    display: none;
-}
-
-</style>
-</head>
-<body>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
     <div id="slideshow">
-        <!--Show Slideshow here-->
-
+      <!--Show Slideshow here-->
     </div>
-    
+
     <div class="whiteBox">
-        <div class="imgBox" draggable="true"></div>
+      <div class="imgBox" draggable="true"></div>
     </div>
     <div class="whiteBox"></div>
     <!-- <div class="whiteBox"></div>
     <div class="whiteBox"></div> -->
-</body>
+  </body>
 </html>
 <script src="index.js"></script>
