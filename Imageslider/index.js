@@ -27,20 +27,43 @@
 // }, 2000);
 
 
-const get = function() {
-    $("#imageListId").sortable({
-        update: function(event, ui) {
-                getIdsOfImages();
-            } //end update         
-    });
-};
-get()
 
-function getIdsOfImages() {
-    var values = [];
-    $('.listitemClass').each(function(index) {
-        values.push($(this).attr("id")
-                    .replace("imageNo", ""));
+const imgBox = document.querySelector('.imgBox');
+const whiteBoxes = document.getElementsByClassName('whiteBox');
+
+// Event listeners for draggable element imgBox
+imgBox.addEventListener('dragstart', (e) => {
+    console.log('DragStart has been triggered');
+    e.target.className += ' hold';
+    setTimeout(() => {
+        e.target.className = 'hide';
+    }, 0);
+
+});
+
+imgBox.addEventListener('dragend', (e) => {
+    console.log('DragEnd has been triggered');
+    e.target.className = 'imgBox';
+});
+
+for (whiteBox of whiteBoxes) {
+    whiteBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        console.log('DragOver has been triggered');
     });
-    $('#outputvalues').val(values);
+
+    whiteBox.addEventListener('dragenter', (e) => {
+        console.log('DragEnter has been triggered');
+        e.target.className += ' dashed'; 
+    })
+
+    whiteBox.addEventListener('dragleave', (e) => {
+        console.log('DragLeave has been triggered');
+        e.target.className = 'whiteBox'
+    })
+
+    whiteBox.addEventListener('drop', (e) => {
+        console.log('Drop has been triggered');
+        e.target.append(imgBox);
+    })
 } 

@@ -1,95 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="index.css">
     <style>
-        body {
-        text-align: center;
-    }
-      
-    /* image dimension */
-    img {
-        height: 200px;
-        width: 350px;
-    }
-      
-    /* imagelistId styling */
-    #imageListId {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-       
-    #imageListId div {
-        margin: 0 4px 4px 4px;
-        padding: 0.4em;
-        display: inline-block;
-    }
-      
-    /* Output order styling */
-    #outputvalues {
-        margin: 0 2px 2px 2px;
-        padding: 0.4em;
-        padding-left: 1.5em;
-        width: 250px;
-        border: 2px solid dark-green;
-        background: gray;
-    }
-       
-    .listitemClass {
-        border: 1px solid #006400;
-        width: 350px;
-    }
-       
-    .height {
-        height: 10px;
-    }
+        body{
+    background:darkcyan;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
 
+.imgBox{
+    background-image: url('https://1.bp.blogspot.com/-qES8XCPCoMs/YPenPwxubUI/AAAAAAAAFdg/txOuXwSLWGQLT-QGAh98a-8m26UjMU9XQCLcBGAsYHQ/w1600/20210721_101605.jpg');
+    position: relative;
+    top: 7px;
+    left: 5px;
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+}
+
+.whiteBox{
+    display: inline-block;
+    height: 155px;
+    width: 155px;
+    margin: 10px;
+    background-color: white;
+    border: 3px black solid;
+}
+
+.hold{
+    border: solid red 4px;
+}
+
+.dashed{
+    background: rgb(214, 206, 206);
+    border-style: dashed;
+}
+
+.hide{
+    display: none;
+}
     </style>
-  </head>
-  <body>
-     
-      
-    <b>Drag and drop</b>
-      
-    <div class="height"></div><br>
-      
-    <div id = "imageListId">
-        <div id="imageNo1" class = "listitemClass">
-            <img src="https://images.unsplash.com/photo-1664574654529-b60630f33fdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
-        </div>
-          
-        <div id="imageNo2" class = "listitemClass">
-            <img src="https://images.unsplash.com/photo-1664739573730-11011f6690e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
-        </div>
-          
-        <div id="imageNo3" class = "listitemClass">
-            <img src="https://images.unsplash.com/photo-1664719772929-4e7265bb3c4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
-        </div>
+</head>
+<body>
+    
+    <div class="whiteBox">
+        <div class="imgBox" draggable="true"></div>
     </div>
+    <div class="whiteBox"></div>
+    <!-- <div class="whiteBox"></div>
+    <div class="whiteBox"></div> -->
 </body>
 </html>
-<!-- <script src="./index.js"></script> -->
-
-<script>
-const get = function() {
-        document.getElementById("imageListId").sortable({
-            update: function(event, ui) {
-                    getIdsOfImages();
-                } //end update         
-        });
-    };
-    get()
-  
-    function getIdsOfImages() {
-        var values = [];
-        document.querySelector('.listitemClass').each(function(index) {
-            values.push($(this).attr("id")
-                        .replace("imageNo", ""));
-        });
-        document.querySelector('#outputvalues').val(values);
-    } 
-</script>
+<script src="index.js"></script>
